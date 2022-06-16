@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- <link rel="stylesheet" href="assets/css/tailwind.min.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <title>Varja</title>
 </head>
-<body>
+<body class="bg-gray-200" dir="rtl">
     <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <!-- Mobile menu button-->
-              <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <button id="btn-menu" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <!--
                   Icon when menu is closed.
@@ -41,72 +42,74 @@
               </button>
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="flex-shrink-0 flex items-center">
+              <!-- Logo Section -->
+              <!-- <div class="flex-shrink-0 flex items-center">
                 <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
                 <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
-              </div>
+              </div> -->
               <div class="hidden sm:block sm:ml-6">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">ورود </a>
+                  <a href="login.html" class="bg-gray-900 text-white mx-3 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">ورود </a>
       
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">ثبت نام</a>
+                  <a href="register.html" class="text-gray-300 hover:bg-gray-700 hover:text-white mx-3 px-3 py-2 rounded-md text-sm font-medium">ثبت نام</a>
+                  <a href="contact-us.html" class="text-gray-300 hover:bg-gray-700 hover:text-white mx-3 px-3 py-2 rounded-md text-sm font-medium">تماس با ما</a>
       
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">درباره ورجا</a>
+                  <a href="about-us.html" class="text-gray-300 hover:bg-gray-700 hover:text-white mx-3 px-3 py-2 rounded-md text-sm font-medium">درباره ورجا</a>
       
                 </div>
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-           
-      
-              <!-- Profile dropdown -->
-              <div class="ml-3 relative">
-                <ul>
-                    <li><a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#">دسته بندی &dtrif;</a>
-                        <ul class="dropdown">
-                          <li><a href="#">Web Development</a></li>
-                          <li><a href="#">Web Design</a></li>
-                          <li><a href="#">Illustration</a></li>
-                          <li><a href="#">Iconography</a></li>
-                        </ul>
-                      </li>
-                </ul>
-      
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-      
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-              
-              </div>
+
             </div>
           </div>
         </div>
       
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
+        <div class="sm-hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="login.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">ورود</a>
       
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+            <a href="register.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">ثبت نام</a>
+            <a href="contact-us.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">تماس با ما</a>
       
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+            <a href="about-us.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">درباره ورجا</a>
       
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
           </div>
         </div>
       </nav>
+        <div class="container mx-auto my-10">
+          <form>   
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+            <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="search" id="default-search" class="block pr-24 p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+            </div>
+        </form>
+        </div>
+        
+     
+     
+      <div class="categories">
+          <div class="conatiner mx-auto my-10">
+            <div class="flex flex-row justify-center flex-wrap">
+              <div class="category m-4 p-4"><a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">برنامه نویسی</a></div>
+              <div class="category m-4 p-4"><a href="#" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">تکنولوژی</a></div>
+              <div class="category m-4 p-4"><a href="#" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">اقتصاد</a></div>
+              <div class="category m-4 p-4"><a href="#" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">سیاست</a></div>
+              <div class="category m-4 p-4"><a href="#" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">سرگرمی</a></div>
+            </div>
+          </div>
+      </div>
       <div class="container mx-auto my-10">
         <h3 class="text-2xl text-center text-gray-900 underline hover:decoration-4">جدیدترین ها</h3>
         <div class="grid md:grid-cols-2 gap-8 lg:grid-cols-3 xs:grid-cols-2 sm:grid-cols-2 my-20">
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
                 <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -114,12 +117,13 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                   </p>
                 </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="single.html">بیشتر بخوانید...</a> </span>
                 <div class="px-6 pt-4 pb-2">
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                 </div>
-              </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+              </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
                 <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -127,27 +131,15 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                   </p>
                 </div>
-                <div class="px-6 pt-4 pb-2">
-                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                </div>
-              </div>
-              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
-                <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-6 py-4">
-                  <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                  <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                  </p>
-                </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
                 <div class="px-6 pt-4 pb-2">
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                 </div>
               </div>
-              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
                 <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -155,13 +147,15 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                   </p>
                 </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
                 <div class="px-6 pt-4 pb-2">
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                 </div>
               </div>
-              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
                 <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -169,13 +163,31 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                   </p>
                 </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
+                <div class="px-6 pt-4 pb-2">
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                </div>
+              </div>
+              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
+                <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                  <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                  </p>
+                </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
                 <div class="px-6 pt-4 pb-2">
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                 </div>
               </div>              
-              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
                 <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -183,6 +195,8 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                   </p>
                 </div>
+                <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
                 <div class="px-6 pt-4 pb-2">
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
@@ -192,7 +206,7 @@
       </div>
       <h3 class="text-2xl text-center text-gray-900 underline hover:decoration-4">شما دنبال میکنید</h3>
       <div class="grid md:grid-cols-2 gap-8 lg:grid-cols-3 xs:grid-cols-2 sm:grid-cols-2 my-20">
-          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
               <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -200,12 +214,14 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
               </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
               </div>
-            </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+            </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
               <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -213,27 +229,15 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
               </div>
-              <div class="px-6 pt-4 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-              </div>
-            </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
-              <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                </p>
-              </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
               </div>
             </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
               <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -241,13 +245,15 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
               </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
               </div>
             </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
               <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -255,13 +261,31 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
               </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
+              <div class="px-6 pt-4 pb-2">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
+              <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                <p class="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+              </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
               </div>
             </div>              
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
               <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -269,6 +293,8 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
                 </p>
               </div>
+              <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
               <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
@@ -278,7 +304,7 @@
     </div>
     <h3 class="text-2xl text-center text-gray-900 underline hover:decoration-4">داغترین ها</h3>
     <div class="grid md:grid-cols-2 gap-8 lg:grid-cols-3 xs:grid-cols-2 sm:grid-cols-2 my-20">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
             <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -286,12 +312,14 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
               </p>
             </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
             </div>
-          </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+          </div> <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
             <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -299,27 +327,15 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
               </p>
             </div>
-            <div class="px-6 pt-4 pb-2">
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
-            <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-              <p class="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-              </p>
-            </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
             </div>
           </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
             <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -327,13 +343,15 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
               </p>
             </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
             </div>
           </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
             <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -341,13 +359,31 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
               </p>
             </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+            </div>
+          </div>
+          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
+            <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              </p>
+            </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
             </div>
           </div>              
-          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20">
+          <div class="max-w-sm rounded overflow-hidden shadow-lg mb-20 bg-white">
             <img class="w-full" src="assets/images/card-top.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -355,6 +391,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
               </p>
             </div>
+            <span  class="read-more text-blue-500 py-4 px-6"><a class="hover:text-blue-900 rounded-md text-base font-medium" href="#">بیشتر بخوانید...</a> </span>
+
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>

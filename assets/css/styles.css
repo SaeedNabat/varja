@@ -63,8 +63,8 @@ padding-left: 0;
     }
 
     ul li ul li a:hover {
-      padding-left: 10px;
-      border-left: 2px solid #3ca0e7;
+      padding-right: 10px;
+      border-right: 2px solid #3ca0e7;
       transition: all 0.3s ease;
     }
 a {
@@ -75,3 +75,11 @@ a {
 
  ul li ul li a { transition: all 0.5s ease; }
 
+#mobile-menu{
+  display: none;
+}
+@media only screen and (min-width: 640px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
